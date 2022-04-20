@@ -23,9 +23,10 @@ const config = {
   database: "practilearnDb",
   server: "MAHESH\\SQLEXPRESS",
   driver: "msnodesqlv8",
+  user: "sa",
+  password: "12345",
   port: 1443,
   options: {
-    trustedConnection: true,
     trustServerCertificate: true,
   },
 };

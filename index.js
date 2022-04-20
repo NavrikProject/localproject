@@ -56,7 +56,6 @@ app.get("/hello-world", async (req, res) => {
         } else {
           res.send(result.recordset);
           console.log(result.recordset);
-          sql.close();
         }
       });
     }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import UsersTable from "./AllTrainersTable";
 import AllCourse from "./AllCourse";
 import Allusers from "./Allusers";
-
+import Logo from "../../images/practi-logo.png";
 const Dashboard = () => {
   const [showCourses, setShowCourse] = useState(false);
   const [showAllTrainers, setShowAllTrainers] = useState(true);
@@ -29,7 +29,9 @@ const Dashboard = () => {
       <div className="topbar">
         <div className="topbarWrapper">
           <div className="topLeft">
-            <span className="logo">PractiLearn</span>
+            <span>
+              <img className="logo" src={Logo} alt="logo" />
+            </span>
           </div>
           <div className="topRight">
             <div className="topbarIconContainer">

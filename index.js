@@ -15,6 +15,7 @@ import trainerRoute from "./routes/trainerRoute.js";
 import trainerProfileRoute from "./routes/trainerProfileRoute.js";
 import traineeProfileRoute from "./routes/traineeProfileRoute.js";
 import trainerEarningsRoute from "./routes/trainerEarningRoute.js";
+import zoomRoute from "./routes/zoomRoute.js";
 import config from "./config/dbconfig.js";
 const app = express();
 dotenv.config();
@@ -70,7 +71,7 @@ app.use("/api/earnings", trainerEarningsRoute);
 app.use("/api/trainer/profile", trainerProfileRoute);
 app.use("/api/trainer", trainerRoute);
 app.use("/api/users", usersRoute);
-
+app.use("/api/zoom", zoomRoute);
 app.listen(port, (req, res) => {
   console.log("listening on port " + port);
 });

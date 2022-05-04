@@ -13,7 +13,9 @@ const NavBarAndRes = () => {
   const toggleMenuItems = () => {
     setIsOpen(!isOpen);
   };
+
   const user = useSelector((state) => state.user.currentUser);
+  
   return (
     <>
       {user === null ? (

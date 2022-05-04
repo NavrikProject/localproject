@@ -22,6 +22,9 @@ const Reviews = React.lazy(() => import("../components/User/Reviews/Reviews"));
 const NewsLetter = React.lazy(() =>
   import("../components/User/NewsLetter/NewsLetter")
 );
+// const OurClients = React.lazy(() =>
+//   import("../components/User/OurClients/OurClients")
+// );
 const Footer = React.lazy(() => import("../components/User/Footer/Footer"));
 const Home = () => {
   return (
@@ -35,6 +38,9 @@ const Home = () => {
       <Suspense fallback={<LineWaveLoader />}>
         <Courses />
       </Suspense>
+      {/* <Suspense fallback={<LineWaveLoader />}>
+        <OurClients />
+      </Suspense> */}
       <Suspense fallback={<LineWaveLoader />}>
         <About />
       </Suspense>
@@ -47,7 +53,6 @@ const Home = () => {
       <Suspense fallback={<LineWaveLoader />}>
         <Reviews />
       </Suspense>
-      {/*  <OurClients /> */}
       <Suspense fallback={<LineWaveLoader />}>
         <Footer />
       </Suspense>

@@ -110,7 +110,6 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-
         {showCourses && <AllCourse />}
         {showAllTrainers && <UsersTable />}
         {showAllUsers && <Allusers />}

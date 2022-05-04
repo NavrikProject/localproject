@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import {
@@ -17,9 +17,23 @@ import {
 } from "./NavbarElements";
 import logo from "../../../images/practi-logo.png";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
+import Submenu from "./Submenu";
 
+const MenuItems = styled.div`
+  width: 80px;
+  height: 100px;
+  background: red;
+`;
 const Navbar = ({ toggleMenuItems }) => {
   const user = useSelector((state) => state.user.currentUser);
+  const [open, setOpen] = useState(false);
+  const [menuItem, setMenuItem] = useState(false);
+  const menuItemToggler = (event) => {
+    event.preventDefault();
+    setOpen(!open);
+    setMenuItem(true);
+  };
   return (
     <Nav>
       <LogoContainer>
@@ -41,9 +55,15 @@ const Navbar = ({ toggleMenuItems }) => {
         <MenuItem>
           {/* redirect to home page */}
           <NavItem>
-            <Link style={{ textDecoration: "none", color: "#062C30" }} to={`/`}>
-              Home
+            <Link
+              style={{ textDecoration: "none", color: "#062C30" }}
+              to={`/trainer-usp`}
+            >
+              Training USP
             </Link>
+          </NavItem>
+          <NavItem onClick={menuItemToggler}>
+            <Submenu />
           </NavItem>
           <NavItem>
             <Link
@@ -92,12 +112,12 @@ const Navbar = ({ toggleMenuItems }) => {
           <SearchBoxInput placeholder="Search....."></SearchBoxInput>
           <FaSearchIcon />
         </SearchForm>
-        <Link
+        {/* <Link
           style={{ textDecoration: "none", color: "#062C30" }}
           to={`/register`}
         >
           <SearchItemText>Register</SearchItemText>
-        </Link>
+        </Link> */}
       </SearchBoxContainer>
       <MenuBarContainer onClick={toggleMenuItems}>
         <FaBars />
